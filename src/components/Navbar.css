@@ -1,0 +1,54 @@
+/* Navbar.css */
+@reference "../index.css";
+
+.navbar {
+    @apply sticky top-0 left-0 z-50
+    bg-surface px-5 py-4 text-text
+    flex flex-row items-center justify-between w-full;
+}
+
+.brandLogo {
+    @apply text-2xl font-bold;
+}
+
+.desktop-nav {
+    @apply hidden md:flex items-center gap-8;
+}
+
+.desktop-nav a {
+    @apply text-text no-underline transition-colors duration-200 hover:text-primary;
+}
+
+.navbar-actions {
+    @apply flex items-center gap-2;
+}
+
+.menu-button {
+    @apply !hidden;
+}
+
+.drawer-content {
+    @apply w-full p-5;
+}
+
+.drawer-header {
+    @apply flex items-center justify-between mb-5;
+}
+
+.drawer-theme {
+    @apply mt-5 border-t border-gray-500/30 pt-3;
+}
+
+.desktop-nav a {
+    @apply text-text no-underline transition-colors duration-200 hover:text-primary;
+}
+
+.desktop-nav .dashboard-btn {
+    @apply bg-primary text-white hover:text-white px-5 py-2 rounded-lg font-semibold transition-all duration-200 hover:opacity-85 hover:shadow-lg;
+}
+
+@media (max-width: 767px) {
+    .menu-button {
+        @apply !inline-flex;
+    }
+}

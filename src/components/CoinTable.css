@@ -1,0 +1,120 @@
+
+/* Main wrapper */
+.coin-table-wrapper {
+    width: 100%;
+    color: var(--text);
+}
+
+/* Desktop table */
+.coin-table-container {
+    background: var(--surface) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border);
+    border-radius: 16px !important;
+    overflow-x: auto;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Table cells */
+.coin-table-container .MuiTableCell-root {
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 24px;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+/* Table header */
+.coin-table-container .MuiTableHead-root .MuiTableCell-root {
+    background: var(--surface);
+    color: var(--text);
+    opacity: 0.65;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+/* Table row hover */
+.coin-table-container .MuiTableBody-root .MuiTableRow-root {
+    transition: background-color 0.2s ease;
+}
+
+.coin-table-container .MuiTableBody-root .MuiTableRow-root:hover {
+    background: var(--hover);
+}
+
+/* Muted text */
+.coin-muted {
+    color: var(--text) !important;
+    opacity: 0.6;
+}
+
+/* Percentage chips */
+.coin-change-chip {
+    font-weight: 600 !important;
+    border-radius: 20px !important;
+    min-width: 100px;
+}
+
+.coin-na-chip {
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+    opacity: 0.65;
+}
+
+/* Pagination */
+.coin-pagination {
+    background: var(--surface);
+    color: var(--text);
+    border-radius: 0 0 16px 16px;
+}
+
+.coin-pagination .MuiTablePagination-toolbar {
+    min-height: 64px;
+}
+
+.coin-pagination .MuiTablePagination-selectLabel,
+.coin-pagination .MuiTablePagination-displayedRows {
+    color: var(--text);
+    opacity: 0.7;
+    font-size: 13px;
+}
+
+/* Empty state */
+.coin-empty {
+    color: var(--text) !important;
+    opacity: 0.6;
+    padding: 25px;
+}
+
+/* Mobile cards */
+.coin-mobile-list {
+    width: 100%;
+}
+
+.coin-mobile-card {
+    background: var(--surface) !important;
+    color: var(--text) !important;
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: 14px !important;
+    transition: background-color 0.3s ease;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+    .coin-pagination .MuiTablePagination-toolbar {
+        padding: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .coin-pagination .MuiTablePagination-selectLabel {
+        margin-left: 0;
+    }
+
+    .coin-mobile-card {
+        padding: 16px;
+    }
+}

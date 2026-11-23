@@ -1,0 +1,337 @@
+/* Home.css*/
+@reference "../index.css";
+
+/* Main Hero */
+
+.home-page {
+    min-height: calc(100svh - 80px);
+    width: 100%;
+    padding: 60px clamp(20px, 7vw, 110px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    overflow: hidden;
+    background: var(--background);
+    color: var(--text);
+}
+
+/* Hero Content */
+
+.description-info {
+    width: 52%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+    z-index: 2;
+}
+
+/* Badge */
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 9px 16px;
+    border-radius: 50px;
+
+    color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 10%, var(--surface));
+
+    border: 1px solid color-mix(in srgb,
+            var(--primary) 25%,
+            transparent);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Heading */
+
+.description-info h1 {
+    display: flex;
+    flex-direction: column;
+
+    font-size: clamp(3.2rem, 6vw, 5.8rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -3px;
+
+    color: var(--text);
+}
+
+.hero-highlight {
+    color: var(--primary);
+}
+
+/* Description */
+
+.description-info p {
+    max-width: 540px;
+
+    color: var(--chart-muted);
+
+    font-size: clamp(15px, 1.3vw, 18px);
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+/* Buttons */
+
+.hero-buttons {
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .MuiButton-root {
+    min-height: 52px;
+    padding: 12px 25px;
+
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: none;
+
+    transition: all 0.3s ease;
+}
+
+.dashboard-btn.MuiButton-contained {
+    background: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
+}
+
+.dashboard-btn.MuiButton-contained:hover {
+    background: var(--primary);
+    filter: brightness(1.12);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.3);
+}
+
+.share-btn.MuiButton-outlined {
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.share-btn.MuiButton-outlined:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 7%, transparent);
+    transform: translateY(-3px);
+}
+
+/* Footer */
+
+.hero-footer {
+    margin-top: 15px;
+    color: var(--chart-muted);
+    font-size: 13px;
+}
+
+.hero-footer span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero-footer svg {
+    color: #22c55e;
+    font-size: 18px;
+}
+
+/* Image Section */
+
+.mobile-image {
+    position: relative;
+
+    width: 48%;
+    max-width: 530px;
+    height: 620px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+/* Gradient */
+
+.hero-gradient {
+    position: absolute;
+
+    width: 85%;
+    height: 85%;
+
+    right: 0;
+    bottom: 0;
+
+    object-fit: cover;
+    border-radius: 45px;
+
+    opacity: 0.85;
+    filter: blur(1px);
+}
+
+/* Phone */
+
+.hero-phone {
+    position: relative;
+    z-index: 2;
+
+    width: 78%;
+    height: 100%;
+
+    object-fit: contain;
+    filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.18));
+}
+
+/* Floating Card */
+
+.floating-card {
+    position: absolute;
+    z-index: 3;
+
+    bottom: 100px;
+    left: -25px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 16px 20px;
+
+    border-radius: 16px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    border: 1px solid var(--border);
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.floating-card>svg {
+    color: #22c55e;
+    font-size: 28px;
+}
+
+.floating-card div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.floating-card strong {
+    font-size: 13px;
+}
+
+.floating-card span {
+    color: var(--chart-muted);
+    font-size: 11px;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+    .home-page {
+        padding: 50px 35px;
+        gap: 20px;
+    }
+
+    .description-info h1 {
+        font-size: clamp(3rem, 6vw, 4.5rem);
+    }
+
+    .mobile-image {
+        height: 500px;
+    }
+
+    .floating-card {
+        left: -10px;
+        bottom: 60px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    .home-page {
+        min-height: auto;
+        flex-direction: column;
+        padding: 45px 22px 60px;
+        gap: 30px;
+    }
+
+    .description-info {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        gap: 22px;
+    }
+
+    .description-info h1 {
+        align-items: center;
+        font-size: clamp(2.8rem, 10vw, 4rem);
+        letter-spacing: -2px;
+    }
+
+    .description-info p {
+        font-size: 15px;
+        max-width: 480px;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .hero-buttons .MuiButton-root {
+        width: 100%;
+    }
+
+    .hero-footer {
+        margin-top: 5px;
+    }
+
+    .mobile-image {
+        width: 100%;
+        max-width: 420px;
+        height: 450px;
+    }
+
+    .hero-phone {
+        width: 75%;
+    }
+
+    .hero-gradient {
+        width: 80%;
+        height: 80%;
+    }
+
+    .floating-card {
+        left: 0;
+        bottom: 35px;
+    }
+}
+
+/* Small Mobile */
+
+@media (max-width: 400px) {
+    .description-info h1 {
+        font-size: 2.6rem;
+    }
+
+    .mobile-image {
+        height: 370px;
+    }
+
+    .floating-card {
+        padding: 12px;
+        bottom: 20px;
+    }
+}

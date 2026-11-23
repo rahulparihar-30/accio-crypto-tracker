@@ -1,0 +1,210 @@
+
+@reference "../index.css";
+
+.performance-compare {
+    width: 100%;
+    padding: 24px 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    color: var(--text);
+}
+
+/* Heading */
+
+.compare-title-icon {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: rgba(37, 99, 235, 0.12);
+    color: var(--primary);
+    font-size: 24px;
+}
+
+/* Main chart card */
+
+.compare-chart-card {
+    background: var(--surface) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border);
+    border-radius: 18px !important;
+    padding: 24px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.035);
+}
+
+.compare-controls {
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* MUI controls */
+
+.performance-compare .MuiInputBase-root {
+    color: var(--text);
+    background: var(--surface);
+}
+
+.performance-compare .MuiOutlinedInput-notchedOutline {
+    border-color: var(--border);
+}
+
+.performance-compare .MuiOutlinedInput-root:hover
+.MuiOutlinedInput-notchedOutline {
+    border-color: var(--primary);
+}
+
+.performance-compare .MuiSvgIcon-root {
+    color: var(--text);
+}
+
+.performance-compare .MuiAutocomplete-paper,
+.performance-compare .MuiMenu-paper {
+    background: var(--surface);
+    color: var(--text);
+}
+
+.performance-compare .MuiAutocomplete-option {
+    color: var(--text);
+}
+
+.performance-compare .MuiAutocomplete-option[aria-selected="true"],
+.performance-compare .MuiAutocomplete-option:hover {
+    background: var(--hover);
+}
+
+.performance-compare .MuiChip-root {
+    max-width: 100%;
+}
+
+/* Chart */
+
+.compare-chart-wrapper {
+    position: relative;
+    width: 100%;
+    height: 430px;
+    margin-top: 28px;
+}
+
+.compare-chart {
+    width: 100%;
+    height: 100%;
+}
+
+.compare-chart-loading,
+.compare-chart-empty,
+.compare-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.compare-chart-loading {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: color-mix(in srgb, var(--surface) 85%, transparent);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+}
+
+.compare-chart-empty {
+    height: 100%;
+    text-align: center;
+}
+
+.compare-loading {
+    min-height: 60vh;
+}
+
+/* Tooltip */
+
+.compare-tooltip {
+    padding: 14px 16px;
+    min-width: 175px;
+    background: var(--surface) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border);
+    border-radius: 12px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Summary */
+
+.compare-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.compare-summary-card {
+    height: 100%;
+    padding: 22px;
+    background: var(--surface) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border);
+    border-radius: 16px !important;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.compare-summary-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+}
+
+/* Chart axes */
+
+.recharts-cartesian-axis-tick-value {
+    fill: var(--chart-muted);
+}
+
+.recharts-tooltip-cursor {
+    stroke: var(--chart-muted);
+    stroke-dasharray: 4 4;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .compare-chart-wrapper {
+        height: 350px;
+    }
+
+    .compare-chart-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .performance-compare {
+        padding-top: 16px;
+        gap: 18px;
+    }
+
+    .compare-chart-card {
+        padding: 16px 12px;
+    }
+
+    .compare-controls {
+        gap: 18px;
+    }
+
+    .compare-chart-wrapper {
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    .compare-summary-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .compare-summary-card {
+        padding: 18px;
+    }
+}

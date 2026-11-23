@@ -1,0 +1,229 @@
+
+@reference "../index.css";
+
+/* Theme variables */
+
+:root {
+    --coin-card-bg: #ffffff;
+    --coin-card-border: #e5e7eb;
+    --coin-card-text: #111827;
+    --coin-card-muted: #6b7280;
+    --coin-card-hover: #f8fafc;
+    --coin-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    --coin-pagination-bg: #f1f5f9;
+}
+
+.dark {
+    --coin-card-bg: #1b1b1b;
+    --coin-card-border: #2b2b2b;
+    --coin-card-text: #ffffff;
+    --coin-card-muted: #a1a1aa;
+    --coin-card-hover: #222222;
+    --coin-card-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+    --coin-pagination-bg: #202020;
+}
+
+/* Main Container */
+
+.coin-cards-container {
+    @apply w-full;
+}
+
+/* Grid Layout */
+
+.coin-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4;
+    @apply gap-5 lg:gap-6;
+}
+
+/* Individual Card */
+
+.coin-card {
+    background: var(--coin-card-bg);
+    border: 1px solid var(--coin-card-border);
+    color: var(--coin-card-text);
+    box-shadow: var(--coin-card-shadow);
+    cursor: pointer;
+
+    @apply rounded-2xl p-5 sm:p-6;
+    @apply flex flex-col gap-6;
+    @apply transition-all duration-300;
+}
+
+.coin-card:hover {
+    transform: translateY(-5px);
+    border-color: #3980e966;
+    box-shadow: 0 12px 35px rgba(57, 128, 233, 0.10);
+}
+
+/* Coin Header */
+
+.coin-header {
+    @apply flex items-center gap-4 min-w-0;
+}
+
+.coin-image {
+    @apply w-12 h-12 rounded-full object-contain shrink-0;
+}
+
+.coin-info {
+    @apply flex flex-col min-w-0;
+}
+
+.coin-info h3 {
+    color: var(--coin-card-text);
+
+    @apply text-lg font-bold capitalize truncate;
+}
+
+.coin-info span {
+    color: var(--coin-card-muted);
+
+    @apply text-sm font-medium uppercase;
+}
+
+/* Percentage Change */
+
+.coin-change-row {
+    @apply flex items-center gap-3;
+}
+
+.coin-change {
+    @apply px-4 py-2 rounded-full text-sm font-bold;
+    @apply border transition-colors;
+}
+
+.coin-trend {
+    @apply w-10 h-10 rounded-full flex items-center justify-center;
+    @apply border transition-colors;
+}
+
+.coin-trend svg {
+    @apply text-xl;
+}
+
+.positive {
+    color: #22c55e;
+    border-color: #22c55e;
+    background: rgba(34, 197, 94, 0.08);
+}
+
+.negative {
+    color: #ef4444;
+    border-color: #ef4444;
+    background: rgba(239, 68, 68, 0.08);
+}
+
+.neutral {
+    color: var(--coin-card-muted);
+    border-color: var(--coin-card-border);
+    background: var(--coin-pagination-bg);
+}
+
+/* Current Price */
+
+.coin-price {
+    @apply text-2xl font-bold tracking-tight;
+    color: var(--coin-card-text);
+}
+
+/* Coin Details */
+
+.coin-details {
+    @apply flex flex-col gap-3 pt-4;
+    border-top: 1px solid var(--coin-card-border);
+}
+
+.coin-detail {
+    @apply flex flex-wrap items-center justify-between gap-2 text-sm;
+}
+
+.coin-detail span {
+    color: var(--coin-card-muted);
+
+    @apply font-medium;
+}
+
+.coin-detail strong {
+    color: var(--coin-card-text);
+
+    @apply font-semibold;
+}
+
+/* Pagination */
+
+.coin-pagination {
+    @apply flex flex-col sm:flex-row items-center justify-between gap-5;
+    @apply mt-10 pt-6;
+
+    border-top: 1px solid var(--coin-card-border);
+}
+
+.pagination-info {
+    color: var(--coin-card-muted);
+
+    @apply text-sm font-medium;
+}
+
+.pagination-controls {
+    @apply flex items-center gap-1.5;
+}
+
+.pagination-arrow,
+.pagination-number {
+    @apply flex items-center justify-center;
+    @apply min-w-9 h-9 rounded-lg;
+    @apply text-sm font-semibold transition-all duration-200;
+    color: var(--coin-card-text);
+    background: var(--coin-pagination-bg);
+}
+
+.pagination-arrow:hover:not(:disabled),
+.pagination-number:hover:not(:disabled) {
+    background: #3980e9;
+    color: #ffffff;
+}
+
+.pagination-number.active {
+    background: #3980e9;
+    color: #ffffff;
+}
+
+.pagination-arrow:disabled,
+.pagination-number:disabled {
+    @apply opacity-40 cursor-not-allowed;
+}
+
+/* Empty State */
+
+.coin-empty {
+    @apply flex flex-col items-center justify-center text-center py-20 gap-3;
+}
+
+.coin-empty h3 {
+    color: var(--coin-card-text);
+
+    @apply text-xl font-bold;
+}
+
+.coin-empty p {
+    color: var(--coin-card-muted);
+
+    @apply text-sm;
+}
+
+/* Responsive Adjustments */
+
+@media (max-width: 640px) {
+    .coin-card {
+        @apply p-5 gap-5;
+    }
+
+    .coin-pagination {
+        @apply gap-4;
+    }
+
+    .pagination-controls {
+        @apply flex-wrap justify-center;
+    }
+}
